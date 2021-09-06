@@ -1,0 +1,22 @@
+<h1 id="tableLabel">Vaccines</h1>
+
+<p>This component demonstrates fetching the doses from the server.</p>
+
+<p *ngIf="!vaccines"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="vaccines">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Brand</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vaccine of vaccines">
+      <td>{{ vaccine.id }}</td>
+      <td>{{ vaccine.brand }}</td>
+   
+    </tr>
+  </tbody>
+</table>
