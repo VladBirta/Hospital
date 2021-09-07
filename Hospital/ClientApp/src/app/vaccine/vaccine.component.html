@@ -18,6 +18,7 @@
     <tr *ngFor="let vaccine of vaccines">
       <td>{{ vaccine.id }}</td>
       <td>{{ vaccine.brand }}</td>
+      <td> <button class="btn btn-danger" (click)="deleteVaccine(vaccine)"> Delete </button> </td>
 
     </tr>
   </tbody>

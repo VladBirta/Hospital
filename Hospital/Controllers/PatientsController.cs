@@ -98,19 +98,32 @@ namespace Hospital.Controllers
         }
 
         // DELETE: api/Patients/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeletePatient(Guid id)
+        // {
+        // var patient = await _context.Patient.FindAsync(id);
+        // if (patient == null)
+        // {
+        //   return NotFound();
+        // }
+
+        //_context.Patient.Remove(patient);
+        //await _context.SaveChangesAsync();
+
+        // return NoContent();
+        //}
+
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePatient(Guid id)
+        public async Task DeletePatient(Guid id)
         {
-            var patient = await _context.Patient.FindAsync(id);
-            if (patient == null)
+            Patient patient = await _context.Patient.FindAsync(id);
+            if (patient != null)
             {
-                return NotFound();
+
+                _context.Patient.Remove(patient);
+                await _context.SaveChangesAsync();
+
             }
-
-            _context.Patient.Remove(patient);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
         }
 
         private bool PatientExists(Guid id)

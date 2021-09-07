@@ -9,9 +9,21 @@ import { Vaccine } from './vaccine.models';
 export class VaccinesComponent {
   public vaccines: Vaccine[];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
     http.get<Vaccine[]>(baseUrl + 'api/vaccines').subscribe(result => {
       this.vaccines = result;
+    }, error => console.error(error));
+  }
+
+     public deleteVaccine(vaccine: Vaccine) {
+    console.log(vaccine);
+
+    this.http.delete(this.baseUrl + 'api/vaccines/' + vaccine.id).subscribe(result => {
+
+      this.http.get<Vaccine[]>(this.baseUrl + 'api/vaccines').subscribe(result => {
+        this.vaccines = result;
+      }, error => console.error(error));
+
     }, error => console.error(error));
   }
 }

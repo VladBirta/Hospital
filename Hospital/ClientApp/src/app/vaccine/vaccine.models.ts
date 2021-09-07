@@ -1,6 +1,6 @@
 
 export interface Vaccine {
-  ID: string;
+  id: string;
   brand: string;
 
 }

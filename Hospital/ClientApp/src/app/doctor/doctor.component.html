@@ -13,6 +13,7 @@
       <th>Name</th>
       <th>Department</th>
       <th>Vaccinated</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +22,7 @@
       <td>{{ doctor.name }}</td>
       <td>{{ doctor.department }}</td>
       <td>{{ doctor.vaccinated }}</td>
+      <td> <button class="btn btn-danger" (click)="deleteDoctor(doctor)"> Delete </button> </td>
     </tr>
   </tbody>
 </table>

@@ -21,6 +21,7 @@
       <td>{{ patient.name }}</td>
       <td>{{ patient.disease }}</td>
       <td>{{ patient.vaccinated }}</td>
+      <td> <button class="btn btn-danger" (click)="deletePatient(patient)"> Delete </button> </td>
     </tr>
   </tbody>
 </table>

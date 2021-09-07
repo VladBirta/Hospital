@@ -9,10 +9,22 @@ import { Doctor } from './doctor.models';
 export class DoctorsComponent {
   public doctors: Doctor[];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
     http.get<Doctor[]>(baseUrl + 'api/doctors').subscribe(result => {
       this.doctors = result;
     }, error => console.error(error));
   }
+
+  public deleteDoctor(doctor: Doctor) {
+    console.log(doctor);
+
+    this.http.delete(this.baseUrl + 'api/doctors/' + doctor.id).subscribe(result => {
+
+      this.http.get<Doctor[]>(this.baseUrl + 'api/doctors').subscribe(result => {
+        this.doctors = result;
+      }, error => console.error(error));
+
+    }, error => console.error(error));
+}
 }
 

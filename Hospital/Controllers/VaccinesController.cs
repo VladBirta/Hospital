@@ -99,19 +99,32 @@ namespace Hospital.Controllers
         }
 
         // DELETE: api/Vaccines/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteVaccine(Guid id)
+        // {
+        // var vaccine = await _context.Vaccine.FindAsync(id);
+        //if (vaccine == null)
+        //{
+        //  return NotFound();
+        //}
+
+        //_context.Vaccine.Remove(vaccine);
+        // await _context.SaveChangesAsync();
+
+        // return NoContent();
+        // }
+
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteVaccine(Guid id)
+        public async Task DeleteVaccine(Guid id)
         {
-            var vaccine = await _context.Vaccine.FindAsync(id);
-            if (vaccine == null)
+            Vaccine vaccine = await _context.Vaccine.FindAsync(id);
+            if (vaccine != null)
             {
-                return NotFound();
+
+                _context.Vaccine.Remove(vaccine);
+                await _context.SaveChangesAsync();
+
             }
-
-            _context.Vaccine.Remove(vaccine);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
         }
 
         private bool VaccineExists(Guid id)

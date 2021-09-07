@@ -1,6 +1,6 @@
 
 export interface Doctor {
-  ID: string;
+  id: string;
   name: string;
   department: string;
   vaccinated: string;
