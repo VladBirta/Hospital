@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Patient } from './patient.models';
 
 @Component({
   selector: 'app-patient',
@@ -13,11 +14,4 @@ export class PatientsComponent {
       this.patients = result;
     }, error => console.error(error));
   }
-}
-
-interface Patient {
-  ID: string;
-  name: string;
-  disease: string;
-  vaccinated: string;
 }

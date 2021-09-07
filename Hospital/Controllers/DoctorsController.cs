@@ -75,14 +75,28 @@ namespace Hospital.Controllers
 
         // POST: api/Doctors
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // [HttpPost]
+        //public async Task<ActionResult<Doctor>> PostDoctor(Doctor doctor)
+        //{
+        // _context.Doctor.Add(doctor);
+        // await _context.SaveChangesAsync();
+
+        // return CreatedAtAction("GetDoctor", new { id = doctor.ID }, doctor);
+        //}
+
         [HttpPost]
-        public async Task<ActionResult<Doctor>> PostDoctor(Doctor doctor)
+        public async Task PostDoctor([FromBody] Doctor doctor)
         {
+            if (doctor.ID == Guid.Empty)
+            {
+                doctor.ID = Guid.NewGuid();
+            }
+
             _context.Doctor.Add(doctor);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetDoctor", new { id = doctor.ID }, doctor);
         }
+
 
         // DELETE: api/Doctors/5
         [HttpDelete("{id}")]

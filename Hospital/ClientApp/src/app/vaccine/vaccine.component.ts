@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Vaccine } from './vaccine.models';
 
 @Component({
   selector: 'app-vaccine',
@@ -15,8 +16,3 @@ export class VaccinesComponent {
   }
 }
 
-interface Vaccine {
-  ID: string;
-  brand: string;
-
-}

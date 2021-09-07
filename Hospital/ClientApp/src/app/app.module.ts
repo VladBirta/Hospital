@@ -12,6 +12,9 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { DoctorsComponent } from './doctor/doctor.component';
 import { PatientsComponent } from './patient/patient.component';
 import { VaccinesComponent } from './vaccine/vaccine.component';
+import { DoctorAddComponent } from './doctor/doctor-add.component';
+import { PatientAddComponent } from './patient/patient-add.component';
+import { VaccineAddComponent } from './vaccine/vaccine-add.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +24,11 @@ import { VaccinesComponent } from './vaccine/vaccine.component';
     CounterComponent,
     FetchDataComponent,
     DoctorsComponent,
+    DoctorAddComponent,
     PatientsComponent,
-    VaccinesComponent
+    VaccinesComponent,
+    PatientAddComponent,
+    VaccineAddComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,8 +39,11 @@ import { VaccinesComponent } from './vaccine/vaccine.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'doctors', component: DoctorsComponent },
+      { path: 'doctor-add', component: DoctorAddComponent },
       { path: 'patients', component: PatientsComponent },
       { path: 'vaccines', component: VaccinesComponent },
+      { path: 'patient-add', component: PatientAddComponent },
+      { path: 'vaccine-add', component: VaccineAddComponent },
     ])
   ],
   providers: [],

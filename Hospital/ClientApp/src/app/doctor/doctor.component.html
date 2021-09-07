@@ -2,6 +2,8 @@
 
 <p>This component demonstrates fetching doctors from the server.</p>
 
+<a class="nav-link text-dark" [routerLink]="['/doctor-add']">Add Doctors</a>
+
 <p *ngIf="!doctors"><em>Loading...</em></p>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="doctors">

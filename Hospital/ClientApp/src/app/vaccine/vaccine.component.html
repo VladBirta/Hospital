@@ -2,6 +2,8 @@
 
 <p>This component demonstrates fetching the doses from the server.</p>
 
+a class="nav-link text-dark" [routerLink]="['/vaccine-add']">Add New Doses</a>
+
 <p *ngIf="!vaccines"><em>Loading...</em></p>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="vaccines">
@@ -9,14 +11,14 @@
     <tr>
       <th>ID</th>
       <th>Brand</th>
-     
+
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let vaccine of vaccines">
       <td>{{ vaccine.id }}</td>
       <td>{{ vaccine.brand }}</td>
-   
+
     </tr>
   </tbody>
 </table>

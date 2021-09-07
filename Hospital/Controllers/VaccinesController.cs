@@ -75,13 +75,27 @@ namespace Hospital.Controllers
 
         // POST: api/Vaccines
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //public async Task<ActionResult<Vaccine>> PostVaccine(Vaccine vaccine)
+        // {
+        // _context.Vaccine.Add(vaccine);
+        //await _context.SaveChangesAsync();
+
+        // return CreatedAtAction("GetVaccine", new { id = vaccine.ID }, vaccine);
+        //}
+
+
         [HttpPost]
-        public async Task<ActionResult<Vaccine>> PostVaccine(Vaccine vaccine)
+        public async Task PostVaccine([FromBody] Vaccine vaccine)
         {
+            if (vaccine.ID == Guid.Empty)
+            {
+                vaccine.ID = Guid.NewGuid();
+            }
+
             _context.Vaccine.Add(vaccine);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetVaccine", new { id = vaccine.ID }, vaccine);
         }
 
         // DELETE: api/Vaccines/5
