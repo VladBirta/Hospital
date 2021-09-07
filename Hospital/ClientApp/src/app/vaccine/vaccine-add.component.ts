@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Vaccine } from './vaccine.models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vaccine-add',
@@ -8,25 +9,26 @@ import { Vaccine } from './vaccine.models';
 })
 export class VaccineAddComponent {
 
-  public vaccine: Vaccine;
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
-    //http.get<Vaccine[]>(baseUrl + 'api/vaccines').subscribe(result => {
-     // this.vaccines = result;
-   // }, error => console.error(error));
+  public vaccine: Vaccine = <Vaccine>{};
 
-    this.vaccine = <Vaccine>{};
-  }
+
+  constructor(
+    private http: HttpClient,
+    @Inject('BASE_URL') private baseUrl: string,
+    private router: Router) { }
+
 
   public saveVaccine() {
-    console.log("Start saving vaccine")
+    console.log("Start saving doses");
+
+    console.log(this.vaccine);
 
     this.http.post(this.baseUrl + 'api/vaccines', this.vaccine).subscribe(result => {
-      console.log("Saving vaccine completed!");
+      console.log("Saving doses completed!")
+
+      this.router.navigateByUrl("/vaccines");
     }, error => console.error(error))
   }
 }
-
-
-
 
