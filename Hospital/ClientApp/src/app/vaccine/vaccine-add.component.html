@@ -1,7 +1,17 @@
-<h1 id="tableLabel">Add Vaccines</h1>
+<!DOCTYPE html>
+<html>
+<body>
 
-<button class="btn btn-primary" (click)="saveVaccine()">Save </button>
-
-<input [(ngModel)]="vaccine.brand" />
+  <h1 id="tableLabel">Add new doses</h1>
 
 
+  <label>Brand:</label><br>
+  <input [(ngModel)]="vaccine.brand">
+  <br>
+  
+
+  <button class="btn btn-primary" (click)="saveVaccine()">Submit </button>
+
+
+</body>
+</html>

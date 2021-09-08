@@ -1,8 +1,24 @@
-<h1 id="tableLabel">Add Patients</h1>
+<!DOCTYPE html>
+<html>
+<body>
+
+  <h1 id="tableLabel">Add new patients</h1>
 
 
-<button class="btn btn-primary" (click)="savePatient()">Save </button>
+  <label>Name:</label><br>
+  <input [(ngModel)]="patient.name">
+  <br>
+  <label>Disease:</label>
+  <br>
+  <input [(ngModel)]="patient.disease">
+  <br>
+  <label>Vaccinated:</label>
+  <br>
+  <input [(ngModel)]="patient.vaccinated">
+  <br>
 
-<input [(ngModel)]="patient.name" />
-<input [(ngModel)]="patient.disease" />
-<input [(ngModel)]="patient.vaccinated" />
+  <button class="btn btn-primary" (click)="savePatient()">Submit </button>
+
+
+</body>
+</html>

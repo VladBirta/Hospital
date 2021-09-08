@@ -2,7 +2,7 @@
 
 <p>This component demonstrates fetching doctors from the server.</p>
 
-<a class="nav-link text-dark" [routerLink]="['/doctor-add']">Add Doctors</a>
+<button class="btn btn-success" [routerLink]="['/doctor-add']">Add Doctors</button>
 
 <p *ngIf="!doctors"><em>Loading...</em></p>
 
@@ -22,7 +22,9 @@
       <td>{{ doctor.name }}</td>
       <td>{{ doctor.department }}</td>
       <td>{{ doctor.vaccinated }}</td>
+      <td><a href="/doctor-update?id={{doctor.id}}" class="btn btn-primary">Edit</a></td>
       <td> <button class="btn btn-danger" (click)="deleteDoctor(doctor)"> Delete </button> </td>
+
     </tr>
   </tbody>
 </table>

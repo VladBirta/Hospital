@@ -25,6 +25,7 @@ export class DoctorsComponent {
       }, error => console.error(error));
 
     }, error => console.error(error));
-}
+       
+  }
 }
 

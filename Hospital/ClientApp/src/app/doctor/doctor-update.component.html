@@ -1,0 +1,19 @@
+<div *ngIf="doctor">
+
+  <h1 id="tableLabel">Edit doctor</h1>
+
+  Name:
+  <br />
+  <input [(ngModel)]="doctor.name" />
+  <br />
+  Department:
+  <br />
+  <input [(ngModel)]="doctor.department" />
+  <br />
+  Vaccinated:
+  <br />
+  <input [(ngModel)]="doctor.vaccinated" />
+  <br />
+
+  <button class="btn btn-primary" (click)="saveDoctor()">Save</button> <br /> <br />
+</div>

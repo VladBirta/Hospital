@@ -2,7 +2,7 @@
 
 <p>This component demonstrates fetching patients from the server.</p>
 
-<a class="nav-link text-dark" [routerLink]="['/patient-add']">Add Patients</a>
+<button class="btn btn-success" [routerLink]="['/patient-add']">Add new patients</button>
 
 <p *ngIf="!patients"><em>Loading...</em></p>
 
@@ -21,7 +21,9 @@
       <td>{{ patient.name }}</td>
       <td>{{ patient.disease }}</td>
       <td>{{ patient.vaccinated }}</td>
+      <td><a href="/patient-update?id={{patient.id}}" class="btn btn-primary">Edit</a></td>
       <td> <button class="btn btn-danger" (click)="deletePatient(patient)"> Delete </button> </td>
+
     </tr>
   </tbody>
 </table>

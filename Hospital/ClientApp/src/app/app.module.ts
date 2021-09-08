@@ -15,6 +15,8 @@ import { VaccinesComponent } from './vaccine/vaccine.component';
 import { DoctorAddComponent } from './doctor/doctor-add.component';
 import { PatientAddComponent } from './patient/patient-add.component';
 import { VaccineAddComponent } from './vaccine/vaccine-add.component';
+import { DoctorUpdateComponent } from './doctor/doctor-update.component';
+import { PatientUpdateComponent } from './patient/patient-update.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { VaccineAddComponent } from './vaccine/vaccine-add.component';
     PatientsComponent,
     VaccinesComponent,
     PatientAddComponent,
-    VaccineAddComponent
+    VaccineAddComponent,
+    DoctorUpdateComponent,
+    PatientUpdateComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -44,6 +48,8 @@ import { VaccineAddComponent } from './vaccine/vaccine-add.component';
       { path: 'vaccines', component: VaccinesComponent },
       { path: 'patient-add', component: PatientAddComponent },
       { path: 'vaccine-add', component: VaccineAddComponent },
+      { path: 'doctor-update', component: DoctorUpdateComponent },
+      { path: 'patient-update', component: PatientUpdateComponent },
     ])
   ],
   providers: [],
