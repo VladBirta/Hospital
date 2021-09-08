@@ -17,6 +17,7 @@ import { PatientAddComponent } from './patient/patient-add.component';
 import { VaccineAddComponent } from './vaccine/vaccine-add.component';
 import { DoctorUpdateComponent } from './doctor/doctor-update.component';
 import { PatientUpdateComponent } from './patient/patient-update.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { PatientUpdateComponent } from './patient/patient-update.component';
     { path: 'vaccine-add', component: VaccineAddComponent },
     { path: 'doctor-update', component: DoctorUpdateComponent },
     { path: 'patient-update', component: PatientUpdateComponent },
-], { relativeLinkResolution: 'legacy' })
+], { relativeLinkResolution: 'legacy' }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
